@@ -1,0 +1,91 @@
+yum install pcre-devel openssl-devel ncurses-devel
+
+yum install libxml2-devel curl-devel libjpeg-devel libpng-devel libmcrypt-devel mhash-devel
+
+
+
+./configure --prefix=/usr/local/nginx-1.8.0-ssl         \
+   --with-http_flv_module                               \
+   --with-http_gzip_static_module                       \
+   --with-http_stub_status_module                       \
+   --with-http_realip_module                            \
+   --with-http_ssl_module --with-http_spdy_module
+
+./configure --prefix=/usr/local/nginx-1.8.0-nossl       \
+   --with-http_flv_module                               \
+   --with-http_gzip_static_module                       \
+   --with-http_stub_status_module                       \
+   --with-http_realip_module
+
+
+
+./configure --prefix=/usr/local/httpd-2.2.29            \
+   --enable-modules=all --enable-mods-shared=all        \
+   --with-included-apr
+
+
+
+./configure --prefix=/usr/local/sphinx-2.2.9-release
+
+
+./configure                                                             \
+   --prefix=/usr/local/php-5.2.17                                       \
+   --with-apxs2=/usr/local/httpd-2.2.29/bin/apxs                        \
+                                                                        \
+   --with-mysql=shared,/usr/local/mariadb-5.3.12                        \
+   --with-mysqli=shared,/usr/local/mariadb-5.3.12/bin/mysql_config      \
+   --with-pdo-mysql=shared,/usr/local/mariadb-5.3.12                    \
+                                                                        \
+   --with-sqlite=shared                                                 \
+   --with-pdo-sqlite=shared                                             \
+                                                                        \
+   --with-gd                                                            \
+   --with-jpeg-dir=/usr                                                 \
+   --with-png-dir=/usr                                                  \
+   --with-freetype-dir=/usr                                             \
+                                                                        \
+   --with-openssl=shared                                                \
+                                                                        \
+   --enable-pcntl=shared                                                \
+   --enable-sockets=shared                                              \
+   --enable-ftp=shared                                                  \
+   --with-curl=shared                                                   \
+   --with-mhash=shared                                                  \
+   --with-mcrypt=shared                                                 \
+   --enable-wddx=shared                                                 \
+   --with-zlib                                                          \
+   --enable-mbstring                                                    \
+                                                                        \
+   --with-libdir=lib64
+
+
+
+./configure                                                             \
+   --prefix=/usr/local/php-5.4.40                                       \
+   --with-apxs2=/usr/local/httpd-2.2.29/bin/apxs                        \
+                                                                        \
+   --with-mysql=shared                                                  \
+   --with-mysqli=shared                                                 \
+   --with-pdo-mysql=shared                                              \
+                                                                        \
+   --with-sqlite3=shared                                                \
+   --with-pdo-sqlite=shared                                             \
+                                                                        \
+   --with-gd                                                            \
+   --with-jpeg-dir=/usr                                                 \
+   --with-png-dir=/usr                                                  \
+   --with-freetype-dir=/usr                                             \
+                                                                        \
+   --with-openssl=shared                                                \
+                                                                        \
+   --enable-pcntl=shared                                                \
+   --enable-sockets=shared                                              \
+   --enable-ftp=shared                                                  \
+   --with-curl=shared                                                   \
+   --with-mhash=shared                                                  \
+   --with-mcrypt=shared                                                 \
+   --enable-wddx=shared                                                 \
+   --with-zlib                                                          \
+   --enable-mbstring
+
+
